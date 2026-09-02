@@ -83,3 +83,55 @@
 .interest-list li,.interest-list li:nth-child(even){display:flex;align-items:center;justify-content:center;min-height:96px;padding:18px 15px;border:0;border-left:1px solid rgba(255,255,255,.42);color:#fff!important;text-align:center;font-size:clamp(20px,2.05vw,32px);line-height:1;letter-spacing:.015em}
 .interest-list li:first-child{border-left:0}
 @media(max-width:700px){.figure{height:78%}.hero-links{left:24px;right:24px;bottom:20px;justify-content:center;gap:18px}.hero-links a{font-size:9px}.interest-list{grid-template-columns:1fr 1fr;margin-top:38px}.interest-list li,.interest-list li:nth-child(even){min-height:58px;padding:12px 8px;border-left:0;border-bottom:1px solid rgba(255,255,255,.4);font-size:22px}.interest-list li:nth-child(even){border-left:1px solid rgba(255,255,255,.4)}}
+
+/* Responsive correction: keep the character, profile and title as one composition. */
+.mobile-character{display:none}
+@media (min-width:701px) and (max-width:1100px){
+  .figure{width:52vw;max-width:570px}
+  .profile{left:calc(50% + clamp(145px,18vw,205px));right:auto;top:46%;min-width:235px;gap:14px}
+  .profile dl div{grid-template-columns:78px 1fr}
+  .profile dd{font-size:11px}
+}
+
+@media(max-width:700px){
+  .hero{height:100svh;min-height:620px}
+  .hero-title{top:12%;font-size:14.5vw;line-height:.82}
+  .hero-kicker{top:22%;left:18px}
+  .figure{left:38%;bottom:46px;width:76vw;height:68%;transform:translateX(-50%)}
+  .figure video,.world-figure video{display:none}
+  .mobile-character{display:block;width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 14px 10px rgba(40,43,76,.08))}
+  .profile{top:48%;bottom:auto;left:auto;right:12px;width:184px;min-width:0;gap:10px;grid-template-columns:2px minmax(0,1fr)}
+  .profile-line{height:112px}
+  .profile dl{gap:8px}
+  .profile dl div{display:block}
+  .profile dt{margin-bottom:2px;font-size:7px}
+  .profile dd{font-size:9px;overflow-wrap:anywhere}
+  .hero-links{left:16px;right:16px;bottom:14px;gap:16px}
+
+  /* Mobile sheets grow with their content so no information is clipped. */
+  .content .section{position:relative;top:auto;min-height:0;height:auto;padding:72px 20px;overflow:visible}
+  .content .world{min-height:100svh;padding:66px 14px 24px;overflow:hidden}
+  .world h2{font-size:16.5vw}
+  .world-modules{position:relative;z-index:4;gap:8px;margin-top:20px}
+  .world-modules a,.world-modules a:nth-child(n){padding:10px 11px;font-size:8px}
+  .world-figure{bottom:8px;width:92vw;height:51%}
+  .section h2{font-size:clamp(42px,13vw,62px);line-height:.9}
+  .eyebrow{margin-bottom:26px}
+  .intro-grid{gap:28px}
+  .skill-grid,.timeline,.roles{margin-top:42px}
+  .projects{padding-top:58px;padding-bottom:58px}
+  .project,.project.feature{padding:24px 0}
+  .timeline article,.roles article{padding:19px 0}
+}
+
+/* Interests: no rules; the pursuits float at deliberately uneven levels. */
+.interest-list{display:flex;align-items:flex-start;justify-content:space-between;gap:clamp(18px,3vw,58px);border:0;margin-top:70px}
+.interest-list li,.interest-list li:nth-child(even){display:block;min-height:0;padding:0;border:0;color:#fff!important;text-align:left;font-size:clamp(20px,2.15vw,34px);line-height:1.02}
+.interest-list li:nth-child(2),.interest-list li:nth-child(4){transform:translateY(54px)}
+.interest-list li:nth-child(3){transform:translateY(18px)}
+@media(max-width:700px){
+  .interests{min-height:100svh!important;padding-bottom:100px!important}
+  .interest-list{display:grid;grid-template-columns:1fr 1fr;gap:30px 22px;margin-top:48px}
+  .interest-list li,.interest-list li:nth-child(even){font-size:24px;text-align:left;transform:none}
+  .interest-list li:nth-child(even){transform:translateY(24px)}
+}
