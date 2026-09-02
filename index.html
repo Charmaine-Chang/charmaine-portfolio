@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Charmaine Chang — Applied Computing student and full-stack developer in Hamilton, New Zealand.">
+  <title>Charmaine Chang — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero" id="home">
+    <div class="dot-field" aria-hidden="true"></div>
+    <p class="hero-kicker">Applied computing · Hamilton, NZ</p>
+    <h1 class="hero-title"><span>Charmaine</span><span>Chang.</span></h1>
+
+    <div class="figure" aria-label="Animated 3D character of Charmaine waving">
+      <video id="source-video" muted autoplay loop playsinline preload="auto" aria-hidden="true">
+        <source src="hello_u2net.webm" type="video/webm">
+      </video>
+      <p class="video-fallback">Hello — I’m Charmaine.</p>
+    </div>
+    <button class="video-play" type="button" hidden>Play character <span aria-hidden="true">▶</span></button>
+
+    <div class="profile" aria-label="Contact details">
+      <span class="profile-line" aria-hidden="true"></span>
+      <dl>
+        <div><dt>Name</dt><dd>Charmaine Chang</dd></div>
+        <div><dt>Phone number</dt><dd><a href="tel:+64223150486">022 315 0486</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:cchaorenn@gmail.com">cchaorenn@gmail.com</a></dd></div>
+      </dl>
+    </div>
+
+    <a class="scroll-cue" href="#world"><span>Scroll to explore</span><i aria-hidden="true"></i></a>
+    <nav class="hero-links" aria-label="Professional links">
+      <a href="https://linkedin.com/in/charmaine-qi-chang" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+      <a href="https://github.com/Charmaine-Chang" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+      <a href="Charmaine_Chang_CV_Rocketspark.pdf" target="_blank">CV <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section class="world section" id="world" aria-labelledby="world-title">
+      <div class="world-heading">
+        <h2 id="world-title">Welcome <span>My World.</span></h2>
+        <nav class="world-modules" aria-label="Portfolio sections">
+          <a href="#about">About me</a><a href="#skills">Technical skills</a><a href="#projects">Projects</a>
+          <a href="#education">Education</a><a href="#experience">Professional experience</a><a href="#interests">Interests</a>
+        </nav>
+      </div>
+      <div class="world-figure" aria-label="Interactive character using a laptop">
+        <video id="world-video" muted playsinline preload="auto" aria-hidden="true">
+          <source src="site_u2net.webm" type="video/webm">
+        </video>
+      </div>
+    </section>
+    <section class="intro section" id="about">
+      <p class="eyebrow">About me</p>
+      <div class="intro-grid">
+        <h2>I listen to customers.<br>I build for them.</h2>
+        <div>
+          <p class="lead">Before my first line of code, I spent five years on the other side of the screen—learning what people actually need.</p>
+          <p>Now I’m a Master of Applied Computing student building practical full-stack products. I care as much about why a feature exists as how it’s built, and I’m looking for a team that ships for real people.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills" id="skills">
+      <p class="eyebrow">Technical skills</p>
+      <h2>Tools I use to turn<br>questions into products.</h2>
+      <div class="skill-grid">
+        <article><h3>Frontend</h3><p>HTML5 · CSS3 · JavaScript · Bootstrap 5 · Jinja2 · Chart.js</p></article>
+        <article><h3>Backend & data</h3><p>Python · Flask · PostgreSQL · MySQL · SQL</p></article>
+        <article><h3>Practice</h3><p>Agile · Scrum · SDLC · Testing · Documentation · PR collaboration</p></article>
+        <article><h3>Tools & AI</h3><p>Git · GitHub · Jira · PythonAnywhere · Codex · AI coding agents</p></article>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects">
+      <p class="eyebrow">Selected projects</p>
+      <article class="project feature">
+        <div><p class="project-type">Personal project · Full stack</p><h2>CCMC Hamilton</h2><p>A bilingual church management system with custom RBAC, operational reports and 26 automated tests.</p></div>
+        <ul><li>Flask + MySQL</li><li>GitHub Actions CI</li><li>Render + TiDB Cloud</li></ul>
+        <div class="project-links"><a href="https://ccmc-ham.onrender.com" target="_blank" rel="noreferrer">Live demo ↗</a><a href="https://github.com/Charmaine-Chang/CCMC_HAM" target="_blank" rel="noreferrer">View code ↗</a></div>
+      </article>
+      <article class="project">
+        <div><p class="project-type">Team project · Environmental data</p><h2>Eco Kaitiaki Hub</h2><p>A production web application that turns environmental data into accessible tools, delivered through Agile sprints and pull-request collaboration.</p></div>
+        <ul><li>Python + Flask</li><li>PostgreSQL</li><li>JavaScript + HTML/CSS</li></ul>
+        <div class="project-links"><a href="https://qichang1128954.pythonanywhere.com" target="_blank" rel="noreferrer">Live demo ↗</a><a href="https://github.com/Charmaine-Chang/eco_kaitiaki_hub" target="_blank" rel="noreferrer">View code ↗</a></div>
+      </article>
+      <article class="project">
+        <div><p class="project-type">Individual project · End to end</p><h2>Selwyn Vet Services</h2><p>A complete service application owned from requirements and interface design through implementation, testing, documentation and demonstration.</p></div>
+        <ul><li>Requirements + design</li><li>Full-stack implementation</li><li>Testing + documentation</li></ul>
+        <div class="project-links"><span>Individual delivery</span></div>
+      </article>
+    </section>
+
+    <section class="section education" id="education">
+      <p class="eyebrow">Education</p><h2>Technical thinking,<br>commercial grounding.</h2>
+      <div class="timeline">
+        <article><time>2025 — present</time><h3>Master of Applied Computing</h3><p>Lincoln University · Part-time</p></article>
+        <article><time>2021 — 2023</time><h3>Master of Business (Finance)</h3><p>Lincoln University · Distinction</p></article>
+        <article><time>2017 — 2018</time><h3>Graduate Diploma in Applied Management</h3><p>Ara Institute of Canterbury</p></article>
+        <article><time>2012 — 2016</time><h3>Bachelor of International Economics & Trade</h3><p>China University of Mining & Technology</p></article>
+      </div>
+    </section>
+
+    <section class="section experience" id="experience">
+      <p class="eyebrow">Professional experience</p><h2>People skills are<br>product skills.</h2>
+      <div class="roles">
+        <article><time>2021 — present</time><h3>Luxury Retail Sales Professional</h3><p>Walker & Hall · Swarovski</p><span>Listening first, building trust and using customer data with care.</span></article>
+        <article><time>2018 — 2021</time><h3>Duty Manager / Supervisor</h3><p>Dragon House Restaurant</p><span>Running workflows, inventory, staffing and process improvements.</span></article>
+        <article><time>2020 — 2024</time><h3>Dance Tutor & Administration Support</h3><p>Beyond Dance Studio</p><span>Teaching, coordinating events and communicating under pressure.</span></article>
+      </div>
+    </section>
+
+    <section class="section interests" id="interests">
+      <p class="eyebrow">Interests</p><h2>I like making things.</h2>
+      <ul class="interest-list">
+        <li>Hip-hop dance</li><li>Videography</li><li>Music remixing</li><li>Jewellery design</li><li>Rock climbing</li>
+      </ul>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
