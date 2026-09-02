@@ -5,6 +5,11 @@ const playButton = document.querySelector('.video-play');
 const profile = document.querySelector('.profile');
 const world = document.querySelector('.world');
 const worldVideo = document.querySelector('#world-video');
+
+// iOS Safari can decode WebM while dropping its alpha channel.
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
+  || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+if (isIOS) document.documentElement.classList.add('needs-alpha-fallback');
 let animationFrame;
 let profileShown = false;
 
