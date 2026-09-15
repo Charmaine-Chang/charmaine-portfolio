@@ -79,9 +79,11 @@
   position:relative;
   top:auto;
   min-height:100svh;
+  --surface-alpha:1;
   padding-top:clamp(56px,6vw,88px);
   padding-bottom:clamp(72px,8vw,120px);
 }
+.section.education{--surface-alpha:1}
 .projects .project,
 .projects .project.feature{
   grid-template-columns:minmax(0,1.45fr) minmax(150px,.45fr) minmax(92px,auto);

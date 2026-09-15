@@ -80,6 +80,10 @@ let surfaceTicking = false;
 function updateSectionSurfaces() {
   const viewportHeight = window.innerHeight || 1;
   stackedSections.forEach(section => {
+    if (section.classList.contains('projects') || section.classList.contains('education')) {
+      section.style.setProperty('--surface-alpha', '1');
+      return;
+    }
     const top = section.getBoundingClientRect().top;
     const progress = Math.min(1, Math.max(0, 1 - top / viewportHeight));
     const alpha = 0.38 + progress * 0.62;
