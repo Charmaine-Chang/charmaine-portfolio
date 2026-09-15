@@ -80,7 +80,7 @@ let surfaceTicking = false;
 function updateSectionSurfaces() {
   const viewportHeight = window.innerHeight || 1;
   stackedSections.forEach(section => {
-    if (section.classList.contains('projects') || section.classList.contains('education')) {
+    if (section.classList.contains('projects')) {
       section.style.setProperty('--surface-alpha', '1');
       return;
     }

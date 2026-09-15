@@ -32,7 +32,8 @@
 /* Each sheet gains opacity as it covers the sheet beneath it. */
 .section{--surface-alpha:1;will-change:background-color}
 .world{--surface-rgb:190,194,218;background-color:rgba(var(--surface-rgb),var(--surface-alpha))!important}
-.intro,.education{--surface-rgb:247,247,243;background-color:rgba(var(--surface-rgb),var(--surface-alpha))!important}
+.intro{--surface-rgb:247,247,243;background-color:rgba(var(--surface-rgb),var(--surface-alpha))!important}
+.education{--surface-rgb:247,247,243;background:linear-gradient(rgba(var(--surface-rgb),var(--surface-alpha)),rgba(var(--surface-rgb),var(--surface-alpha))),rgb(228,224,241)!important}
 .skills{--surface-rgb:23,25,40;background-color:rgba(var(--surface-rgb),var(--surface-alpha))!important}
 .projects{--surface-rgb:228,224,241;background-color:rgba(var(--surface-rgb),var(--surface-alpha))!important}
 .experience{--surface-rgb:207,216,207;background-color:rgba(var(--surface-rgb),var(--surface-alpha))!important}
@@ -83,7 +84,6 @@
   padding-top:clamp(56px,6vw,88px);
   padding-bottom:clamp(72px,8vw,120px);
 }
-.section.education{--surface-alpha:1}
 .projects .project,
 .projects .project.feature{
   grid-template-columns:minmax(0,1.45fr) minmax(150px,.45fr) minmax(92px,auto);
