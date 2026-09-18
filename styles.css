@@ -173,6 +173,41 @@
 .interest-list{position:relative;display:block;min-height:220px;border:0;margin-top:44px}
 .interest-list li,.interest-list li:nth-child(even){display:block;min-height:0;padding:0;border:0;color:#fff!important;text-align:left;font-size:clamp(20px,2.15vw,34px);line-height:1.02}
 .interest-list li{position:absolute;white-space:nowrap}
+
+/* Final interaction pass: the world scrubs horizontally without blocking vertical page travel. */
+.world{touch-action:pan-y}
+
+/* Keep Projects within one desktop sheet, then let Education cover it like every other section. */
+@media(min-width:701px){
+  .section.projects{
+    position:sticky;
+    top:0;
+    min-height:100svh;
+    height:100svh;
+    padding-top:clamp(34px,4vh,52px);
+    padding-bottom:clamp(28px,3.5vh,46px);
+    overflow:hidden;
+  }
+  .projects .project,
+  .projects .project.feature{
+    padding:clamp(10px,1.25vh,16px) 0;
+    gap:clamp(14px,2vw,28px);
+  }
+  .projects .project.feature{margin-top:clamp(10px,1.5vh,18px)}
+  .projects .project h2,
+  .projects .project.feature h2{font-size:clamp(30px,3.7vw,54px);line-height:.9}
+  .projects .project p:not(.project-type){margin-top:6px;font-size:11px;line-height:1.4}
+  .projects .project ul{font-size:11px;line-height:1.65}
+}
+
+@media(max-width:700px){
+  /* Sticky sheets reproduce the desktop page-over-page transition on touch screens. */
+  .content .section{position:sticky;top:0;min-height:100svh;height:auto}
+  .content .projects{position:relative;top:auto;min-height:100svh}
+  .needs-alpha-fallback .figure video{display:none}
+  .needs-alpha-fallback .world-figure video{display:block}
+  .needs-alpha-fallback .world-figure .mobile-character{display:none}
+}
 .interest-list li:nth-child(1){left:1%;top:8px}
 .interest-list li:nth-child(2){left:24%;top:105px}
 .interest-list li:nth-child(3){left:43%;top:32px}

@@ -9,7 +9,11 @@ const worldVideo = document.querySelector('#world-video');
 // iOS Safari can decode WebM while dropping its alpha channel.
 const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
   || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-if (isIOS) document.documentElement.classList.add('needs-alpha-fallback');
+if (isIOS) {
+  document.documentElement.classList.add('needs-alpha-fallback');
+  worldVideo.src = 'site.mp4';
+  worldVideo.load();
+}
 let animationFrame;
 let profileShown = false;
 
@@ -61,8 +65,22 @@ function setWorldTarget(clientX) {
   world.style.setProperty('--scrub', pointer.toFixed(3));
 }
 
-world.addEventListener('pointermove', event => setWorldTarget(event.clientX));
-world.addEventListener('pointerdown', event => setWorldTarget(event.clientX));
+let worldScrubbing = false;
+
+world.addEventListener('pointerdown', event => {
+  worldScrubbing = true;
+  world.setPointerCapture(event.pointerId);
+  setWorldTarget(event.clientX);
+});
+world.addEventListener('pointermove', event => {
+  if (event.pointerType === 'mouse' || worldScrubbing) setWorldTarget(event.clientX);
+});
+world.addEventListener('pointerup', event => {
+  setWorldTarget(event.clientX);
+  worldScrubbing = false;
+  if (world.hasPointerCapture(event.pointerId)) world.releasePointerCapture(event.pointerId);
+});
+world.addEventListener('pointercancel', () => { worldScrubbing = false; });
 
 function smoothWorldVideo() {
   if (worldDuration && worldVideo.readyState >= 2) {
