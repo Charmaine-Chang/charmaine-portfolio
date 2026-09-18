@@ -203,10 +203,53 @@
 @media(max-width:700px){
   /* Sticky sheets reproduce the desktop page-over-page transition on touch screens. */
   .content .section{position:sticky;top:0;min-height:100svh;height:auto}
-  .content .projects{position:relative;top:auto;min-height:100svh}
-  .needs-alpha-fallback .figure video{display:none}
-  .needs-alpha-fallback .world-figure video{display:block}
-  .needs-alpha-fallback .world-figure .mobile-character{display:none}
+  .content .projects{
+    position:sticky;
+    top:0;
+    width:100%;
+    min-height:100svh;
+    height:100svh;
+    padding:clamp(24px,4.2vh,38px) 16px clamp(18px,3vh,28px);
+    overflow:hidden;
+  }
+  .projects>.eyebrow{margin-bottom:0;font-size:8px}
+  .projects .project,
+  .projects .project.feature{
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:5px 10px;
+    align-items:end;
+    padding:clamp(8px,1.35vh,13px) 0;
+  }
+  .projects .project.feature{margin-top:clamp(7px,1.2vh,11px)}
+  .projects .project>div:first-child{min-width:0}
+  .projects .project h2,
+  .projects .project.feature h2{
+    font-size:clamp(20px,5.8vw,27px);
+    line-height:.9;
+    letter-spacing:-.025em;
+  }
+  .projects .project p.project-type{margin:0 0 3px;font-size:7px!important;line-height:1.15}
+  .projects .project p:not(.project-type){margin:4px 0 0;font-size:clamp(8px,2.25vw,10px);line-height:1.25}
+  .projects .project ul{
+    grid-column:2;
+    grid-row:1;
+    align-self:end;
+    min-width:92px;
+    margin:0;
+    font-size:7px;
+    line-height:1.5;
+  }
+  .projects .project-links{
+    grid-column:1/-1;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:1px;
+    font-size:8px;
+  }
+  /* iOS cannot reliably decode the WebM alpha channel; keep the transparent person visible. */
+  .needs-alpha-fallback .world-figure video{display:none}
+  .needs-alpha-fallback .world-figure .mobile-character{display:block}
 }
 .interest-list li:nth-child(1){left:1%;top:8px}
 .interest-list li:nth-child(2){left:24%;top:105px}
