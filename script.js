@@ -11,8 +11,6 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
   || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 if (isIOS) {
   document.documentElement.classList.add('needs-alpha-fallback');
-  worldVideo.src = 'site.mp4';
-  worldVideo.load();
 }
 let animationFrame;
 let profileShown = false;
